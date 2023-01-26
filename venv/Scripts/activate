@@ -38,7 +38,11 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
+<<<<<<< HEAD
 VIRTUAL_ENV="C:\Users\jbt\Desktop\Shopping-first\Shopping-front\venv"
+=======
+VIRTUAL_ENV="C:\Users\jbt\Desktop\itayproj\Shopping-first\shopping-front\venv"
+>>>>>>> b274716b33c6a70c01eb8b9d1bc1c4b9b733fbd0
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

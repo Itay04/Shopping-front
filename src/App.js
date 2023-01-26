@@ -1,5 +1,6 @@
 
 import axios from "axios";
+import { product } from "prelude-ls";
 import { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import AddProduct from "./components/Addproduct";
@@ -11,6 +12,8 @@ import Products from "./components/Products";
 
 function App() {
     const [products, setProducts] = useState([])
+    // const [cart, setCart] = useState([])
+
     useEffect(() => {
         fetch("http://localhost:8000/products/")
             .then((response) => response.json())
@@ -38,6 +41,7 @@ function App() {
         })
 
     }
+
 
     function onDelete(id) {
         fetch("http://localhost:8000/products/" + id, { method: 'DELETE' })
