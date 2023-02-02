@@ -8,7 +8,11 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
+<<<<<<< HEAD
+set VIRTUAL_ENV=C:\Users\jbt\Desktop\Shopping-first\Shopping-front\venv
+=======
 set VIRTUAL_ENV=C:\Users\jbt\Desktop\itayproj\Shopping-first\shopping-front\venv
+>>>>>>> b274716b33c6a70c01eb8b9d1bc1c4b9b733fbd0
 
 if not defined PROMPT set PROMPT=$P$G
 

@@ -1,4 +1,5 @@
 
+import axios from "axios";
 import { product } from "prelude-ls";
 import { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
@@ -6,6 +7,7 @@ import AddProduct from "./components/Addproduct";
 import Cart from "./components/CartItems";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import LoginPage from "./components/LoginPage";
 import Products from "./components/Products";
 
 function App() {
@@ -16,17 +18,30 @@ function App() {
         fetch("http://localhost:8000/products/")
             .then((response) => response.json())
             .then((data) => {
+                // console.log(data)
                 setProducts(data)
             });
-        fetch('http://localhost:8000/cart/', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(product)
-            });
-        console.log('use effect called!')
+        
     }, [])
+    const [cart, setCart] = useState([])
+    useEffect(() => {
+        fetch("http://localhost:8000/cart/")
+            .then((response) => response.json())
+            .then((data) => {
+                
+                setCart(data)
+            });
+        
+    }, [])
+
+    function loginUser(user, pass) {
+        axios.post('http://localhost:8000/login/', {
+            username: user,
+            password: pass,
+        })
+
+    }
+
 
     
     function onDelete(id) {
@@ -75,6 +90,7 @@ function App() {
                         <Products products={products} onDelete={onDelete}  />} />
                     <Route path="/cart" element={<Cart/>} />
                     <Route path="/addproduct" element={<AddProduct addProduct={addProduct}/>} />
+                    <Route path="/login" element={<LoginPage loginUser={loginUser}/>} />
                     
                 </Routes>
                 <Footer />

@@ -30,4 +30,3 @@ function Header({ logout }) {
    
    
    export default Header
-
