@@ -12,6 +12,7 @@ import Products from "./components/Products";
 function App() {
     const [products, setProducts] = useState([])
     const [cart, setCart] = useState([])
+    
 
     useEffect(() => {
         fetch("http://localhost:8000/products/")
@@ -63,17 +64,12 @@ function App() {
 
     }
 
-    // function addToCart(name, price, description, quantity) {
-    //     let product = {
-    //         id: products.length + 10,
-    //         name: name,
-    //         price: price,
-    //         description: description,
+    // // function addToCart(name, price, description, quantity) {
+    // //     let product = {
+    //     fetch("http://localhost:8000/products/" + id, { method: 'DELETE' })
+    // //     setCartProducts((prevList)=>[...prevList,productToAdd])
 
-    //     }
-    //     setProducts([...products, product])
-
-    // }
+    // // }
 
 
   return (
@@ -87,7 +83,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={
                         <Products products={products} onDelete={onDelete}/>} />
-                    <Route path="/cart" element={<Cart setCart={setCart}/>} />
+                    <Route path="/cart" element={<Cart setCart={setCart} cart={cart}/>} />
                     <Route path="/addproduct" element={<AddProduct addProduct={addProduct}/>} />
                     <Route path="/login" element={<LoginPage loginUser={loginUser}/>} />
                     
