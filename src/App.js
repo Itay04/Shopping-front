@@ -3,7 +3,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import AddProduct from "./components/Addproduct";
-import Cart from "./components/CartItem";
+import Cart from "./components/Cart";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import LoginPage from "./components/LoginPage";
@@ -15,10 +15,10 @@ function App() {
     
 
     useEffect(() => {
-        axios.get("http://localhost:8000/products/")
+        axios.get("http://localhost:8000/cart/")
         .then((response) => {
             // console.log(response.data);
-            setProducts(response.data);
+            setCart(response.data);
         })
         .catch((error) => {
             console.log(error);
@@ -87,7 +87,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={
                         <Products products={products} onDelete={onDelete}/>} />
-                    <Route path="/cart" element={<Cart setCart={setCart} cart={cart}/>} />
+                    <Route path="/cart" element={<Cart cart={cart}/>} />
                     <Route path="/addproduct" element={<AddProduct addProduct={addProduct}/>} />
                     <Route path="/login" element={<LoginPage loginUser={loginUser}/>} />
                     

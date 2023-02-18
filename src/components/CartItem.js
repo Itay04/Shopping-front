@@ -1,7 +1,7 @@
 // import product from "./Product"
 
 function CartItem({cartitem}) {
-    console.log(cart);
+    console.log(cartitem);
 
     return (
         <div>
