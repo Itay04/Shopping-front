@@ -15,25 +15,29 @@ function App() {
     
 
     useEffect(() => {
-        fetch("http://localhost:8000/products/")
-            .then((response) => response.json())
-            .then((data) => {
-                // console.log(data)
-                setProducts(data)
+        axios.get("http://localhost:8000/products/")
+        .then((response) => {
+            // console.log(response.data);
+            setProducts(response.data);
+        })
+        .catch((error) => {
+            console.log(error);
             });
         
     }, [])
 
     useEffect(() => {
-        fetch("http://localhost:8000/cart/")
-            .then((response) => response.json())
-            .then((data) => {
-                
-                setCart(data)
+        axios.get("http://localhost:8000/products/")
+            .then((response) => {
+                // console.log(response.data);
+                setProducts(response.data);
+            })
+            .catch((error) => {
+                console.log(error);
             });
-        
-    }, [])
+    }, []);
 
+    
     function loginUser(user, pass) {
         axios.post('http://localhost:8000/login/', {
             username: user,

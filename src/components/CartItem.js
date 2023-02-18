@@ -1,4 +1,4 @@
-import product from "./Product"
+// import product from "./Product"
 
 function CartItem(cartitem) {
 
@@ -8,8 +8,7 @@ function CartItem(cartitem) {
             <h3>{cartitem.product.description}</h3>
             <h3>{cartitem.product.price}</h3>
             <h3>{cartitem.product.quantity}</h3>
-            <img src={'http://localhost:8000/static'+product.image} alt={product.name}/>
-            
+            <img src={'http://localhost:8000/static'+cartitem.product.image} alt={cartitem.product.name}/>           
         </div>
     )
 }
