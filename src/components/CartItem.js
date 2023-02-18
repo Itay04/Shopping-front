@@ -1,6 +1,7 @@
 // import product from "./Product"
 
-function CartItem(cartitem) {
+function CartItem({cartitem}) {
+    console.log(cart);
 
     return (
         <div>
