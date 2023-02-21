@@ -6,7 +6,7 @@ function Cart({cart}) {
     <>      <div>Cart:
       <Container fluid>
     <Row>
-      {cart.map(cartitem => <Col><CartItem cartitem={cartitem} key={cartitem.id}/></Col>)}
+      {cart.map(cartitem => <Col xs={14} sm={6} lg={3} style={{ margin: "10px" }}><CartItem cartitem={cartitem} key={cartitem.id}/></Col>)}
       </Row>
       </Container>
       </div>

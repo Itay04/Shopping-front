@@ -68,18 +68,11 @@ function App() {
 
     }
 
-    // // function addToCart(name, price, description, quantity) {
-    // //     let product = {
-    //     fetch("http://localhost:8000/products/" + id, { method: 'DELETE' })
-    // //     setCartProducts((prevList)=>[...prevList,productToAdd])
-
-    // // }
-
 
   return (
     <div className="App">
         <BrowserRouter>
-            <h1>My Cart Front end</h1>
+            <h1>My Cart</h1>
         
                 <Header  />
                 

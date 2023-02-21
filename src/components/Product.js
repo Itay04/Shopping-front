@@ -12,7 +12,7 @@ function Product({product}) {
             <h1>{product.name}</h1>
             <h3>{product.description}</h3>
             <h3>{product.price}</h3>
-            <img src={'http://localhost:8000/static'+product.image} alt={product.name}/>
+            <img style={{width:"100%"}} src={'http://localhost:8000/static'+product.image} alt={product.name}/>
             <button onClick={()=> {Addtocart(product.id)}}> Add To Cart</button>
             
         </div>

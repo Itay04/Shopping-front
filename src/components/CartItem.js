@@ -9,7 +9,7 @@ function CartItem({cartitem}) {
             <h3>{cartitem.product.description}</h3>
             <h3>{cartitem.product.price}</h3>
             <h3>{cartitem.product.quantity}</h3>
-            <img src={'http://localhost:8000/static'+cartitem.product.image} alt={cartitem.product.name}/>           
+            <img style={{width:"100%"}} src={'http://localhost:8000/static'+cartitem.product.image} alt={cartitem.product.name}/>           
         </div>
     )
 }
