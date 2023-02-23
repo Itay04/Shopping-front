@@ -14,7 +14,9 @@ function Cart({cart}) {
         <Row>
           {cart.map(cartitem => <Col xs={14} sm={6} lg={3} style={{ margin: "10px" }}><CartItem cartitem={cartitem} key={cartitem.id}/></Col>)}
         </Row>
-        <div>Total price: {totalPrice}</div>
+        <div className="text-center">
+          <h2 style={{ fontSize: '30px', color: '#007bff' }}>Total price: ${totalPrice}</h2>
+        </div>
       </Container>
     </>
 )

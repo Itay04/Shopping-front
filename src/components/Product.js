@@ -17,7 +17,7 @@ function Product({ product }) {
       <div>
         <h1>{product.name}</h1>
         <h3>{product.description}</h3>
-        <h3>{product.price}</h3>
+        <h3>${product.price}</h3>
         <img
           style={{ width: "100%" }}
           src={"http://localhost:8000/static" + product.image}
