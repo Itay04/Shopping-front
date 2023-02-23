@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
+import { Button, Card } from "react-bootstrap";
 function CartItem({ cartitem, updateCart }) {
   const [quantity, setQuantity] = useState(cartitem.quantity);
 
@@ -39,27 +40,24 @@ function CartItem({ cartitem, updateCart }) {
     };
     
     return (
-      <div>
-      <h1>{cartitem.product.name}</h1>
-      <h3>{cartitem.product.description}</h3>
-      <h3>${cartitem.product.price}</h3>
-      <h3>{cartitem.product.quantity}</h3>
-      <img
-        style={{ width: "100%" }}
-        src={"http://localhost:8000/static" + cartitem.product.image}
-        alt={cartitem.product.name}
-      />
-        <input
-          type="number"
-          value={quantity}
-          onChange={(e) => {
-            updateCartQuantity(cartitem, e.target.value);
-          }}
-        />
-        <button onClick={() => deleteCartItem(cartitem.product.id)}>Delete</button>
-      </div>
-
-    )
+      <Card>
+        <Card.Img variant="top" src={"http://localhost:8000/static" + cartitem.product.image} alt={cartitem.product.name} />
+        <Card.Body>
+          <Card.Title>{cartitem.product.name}</Card.Title>
+          <Card.Text>{cartitem.product.description}</Card.Text>
+          <Card.Text>${cartitem.product.price}</Card.Text>
+          <Card.Text>{cartitem.product.quantity}</Card.Text>
+          <input
+            type="number"
+            value={quantity}
+            onChange={(e) => {
+              updateCartQuantity(cartitem, e.target.value);
+            }}
+          />
+          <Button variant="danger" onClick={() => deleteCartItem(cartitem.product.id)}>Delete</Button>
+        </Card.Body>
+      </Card>
+    );
   }
 
   export default CartItem
