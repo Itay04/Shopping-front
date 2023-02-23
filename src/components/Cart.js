@@ -9,7 +9,9 @@ function Cart({cart}) {
 
   return ( 
     <>
-      <div>Cart:</div>
+      <div>
+        <h2>Cart:</h2>
+      </div>
       <Container fluid>
         <Row>
           {cart.map(cartitem => <Col xs={14} sm={6} lg={3} style={{ margin: "10px" }}><CartItem cartitem={cartitem} key={cartitem.id}/></Col>)}
