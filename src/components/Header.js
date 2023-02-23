@@ -1,29 +1,29 @@
 
-import { Nav } from "react-bootstrap";
+import { Button, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 function Header({ logout }) {
   return (
-    <Nav className="bg-light justify-content-between">
+    <Nav className="bg-dark justify-content-between">
       <Nav.Item>
-        <Nav.Link as={Link} to="/" className="nav-link">
+        <Button as={Link} to="/" variant="link">
           Products
-        </Nav.Link>
+        </Button>
       </Nav.Item>
       <Nav.Item>
-        <Nav.Link as={Link} to="/cart">
+        <Button as={Link} to="/cart" variant="link">
           Cart
-        </Nav.Link>
+        </Button>
       </Nav.Item>
       <Nav.Item>
-        <Nav.Link as={Link} to="/addproduct">
+        <Button as={Link} to="/addproduct" variant="link">
           Add Product
-        </Nav.Link>
+        </Button>
       </Nav.Item>
       <Nav.Item>
-        <Nav.Link as={Link} onClick={logout} to="/">
+        <Button onClick={logout} variant="link">
           Logout
-        </Nav.Link>
+        </Button>
       </Nav.Item>
     </Nav>
   );
