@@ -15,7 +15,9 @@ function Products({ products }) {
 
   return (
     <div>
-      <h2>Products:</h2>
+      <h2>
+        <br></br>
+        Products in cart:</h2>
       <div>
         <input
           type="text"
