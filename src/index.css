@@ -54,6 +54,7 @@ body {
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
+  
 }
 
 .products-container p {
@@ -76,5 +77,17 @@ body {
   border-radius: 0.5rem;
 }
 
+.animated {
+  animation-name: fadeIn;
+  animation-duration: 1s;
+}
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 

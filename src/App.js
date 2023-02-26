@@ -72,7 +72,7 @@ function App() {
   return (
     <div className="App">
         <BrowserRouter>
-            <h1 className="headline">All Shop</h1>
+            <h1 className="headline animated">All Shop</h1>
         
                 <Header  />
                 

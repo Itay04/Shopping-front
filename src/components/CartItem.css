@@ -1,39 +1,47 @@
-
-.Card {
-  margin-bottom: 20px;
-  padding: 10px;
-}
-
-.Card.Body {
-  padding: 0 10px;
-}
-
-.cart-item-title {
-    font-family: Arial, sans-serif;
-    font-size: 18px;
+.cart-item-card {
+    margin-bottom: 2rem;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
+  }
+  
+  .cart-item-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+    text-align: center;
+  }
+  
+  .cart-item-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    text-align: center;
   }
   
   .cart-item-description {
-    font-family: Arial, sans-serif;
-    font-size: 14px;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
   }
   
   .cart-item-price {
-    font-family: Arial, sans-serif;
-    font-size: 16px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-align: center;
   }
   
-
-input[type="number"] {
-  border: 1px solid #ccc;
-  padding: 5px;
-  width: 50px;
-  margin-right: 10px;
-}
-
-.btn-danger {
-  background-color: #dc3545;
-  padding: 5px 10px;
-  border: none;
-  margin-left: 10px;
-}
+  .cart-item-input {
+    width: 75px;
+    max-width: 100%;
+    text-align: center;
+  }
+  
+  .cart-item-delete-btn {
+    font-size: 1rem;
+    margin-left: auto;
+    padding: 0.5rem 1rem;
+  }

@@ -3,32 +3,38 @@
     height: 200px;
     object-fit: cover;
     margin-bottom: 1rem;
+    text-align: center;
   }
   
   .product-title {
     font-size: 1.5rem;
     font-weight: bold;
     margin-bottom: 0.5rem;
+    text-align: center;
   }
   
   .product-description {
     font-size: 1rem;
     margin-bottom: 1rem;
+    text-align: center;
   }
   
   .product-price {
     font-size: 1rem;
     font-weight: bold;
     margin-bottom: 1rem;
+    text-align: center;
   }
   
   .product-quantity {
     width: 70px;
     margin-right: 10px;
+    text-align: center;
   }
   
   .product-button {
     font-size: 1rem;
     padding: 10px 20px;
     margin-top: 10px;
+    text-align: center;
   }

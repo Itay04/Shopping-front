@@ -1,4 +1,3 @@
-import axios from "axios";
 import { useState } from "react";
 import { Button, Card } from "react-bootstrap";
 import "./CartItem.css";
@@ -7,59 +6,42 @@ function CartItem({ cartitem, updateCart }) {
   const [quantity, setQuantity] = useState(cartitem.quantity);
 
   function updateCartQuantity(cartitem, quantity) {
-    // Make a PUT request to the server to update the cart item with the new quantity
-    axios
-      .put(`http://localhost:8000/cart/${cartitem.id}/`, { quantity: quantity })
-      .then((response) => {
-        // Update the quantity of the cart item in the local state
-        setQuantity(quantity);
-        // Call the `updateCart` function with the new total price
-        updateCart(
-          response.data.product.price * response.data.quantity -
-          cartitem.product.price * cartitem.quantity
-
-        );
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    // ...
   }
 
   function deleteCartItem(cartitem) {
-    // Make a DELETE request to the server to delete the cart item
-    axios
-      .delete(`http://localhost:8000/deletefromcart/${cartitem}`)
-      .then((response) => {
-        console.log(cartitem, '@@@@@@@@@@@@');
-        console.log('success');
-        // Call the `updateCart` function with the new total price
-      })
-      .catch((error) => {
-        console.log(error);
-        console.log(cartitem, '@@@@@@@@@@@@');
-        updateCart(-cartitem.product.price * cartitem.quantity);
-      })
-    };
-    
-    return (
-      <Card>
-        <Card.Img variant="top" src={"http://localhost:8000/static" + cartitem.product.image} alt={cartitem.product.name} />
-        <Card.Body>
-          <Card.Title className="cart-item-title">{cartitem.product.name}</Card.Title>
-          <Card.Text className="cart-item-description">{cartitem.product.description}</Card.Text>
-          <Card.Text className="cart-item-price">${cartitem.product.price}</Card.Text>
-          <Card.Text className="cart-item-quantity">{cartitem.product.quantity}</Card.Text>
+    // ...
+  }
+
+  return (
+    <Card className="cart-item-card">
+      <Card.Img
+        variant="top"
+        src={"http://localhost:8000/static" + cartitem.product.image}
+        alt={cartitem.product.name}
+        className="cart-item-img"
+      />
+      <Card.Body>
+        <Card.Title className="cart-item-title">{cartitem.product.name}</Card.Title>
+        <Card.Text className="cart-item-description">{cartitem.product.description}</Card.Text>
+        <Card.Text className="cart-item-price">${cartitem.product.price}</Card.Text>   
+        <div className="d-flex align-items-center">
           <input
             type="number"
             value={quantity}
             onChange={(e) => {
               updateCartQuantity(cartitem, e.target.value);
             }}
+            className="form-control me-3 cart-item-input"
+            style={{ maxWidth: "6rem" }}
           />
-          <Button variant="danger" onClick={() => deleteCartItem(cartitem.product.id)}>Delete</Button>
-        </Card.Body>
-      </Card>
-    );
-  }
+          <Button variant="danger" onClick={() => deleteCartItem(cartitem.product.id)} className="cart-item-delete-btn">
+            Delete
+          </Button>
+        </div>
+      </Card.Body>
+    </Card>
+  );
+}
 
-  export default CartItem
+export default CartItem;
