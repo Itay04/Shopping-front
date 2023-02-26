@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Form, Row } from "react-bootstrap";
 import Product from "./Product";
 
 function Products({ products }) {
@@ -15,21 +15,21 @@ function Products({ products }) {
 
   return (
     <div>
-      <h2>
-        <br></br>
-        Products in Shop:</h2>
-      <div>
-        <input
-          type="text"
-          placeholder="Search products"
-          value={searchTerm}
-          onChange={handleSearch}
-        />
+      <h2 className="my-5 text-center">Products in Shop:</h2>
+      <div className="d-flex justify-content-center mb-5">
+        <Form.Group controlId="formBasicSearch">
+          <Form.Control
+            type="text"
+            placeholder="Search products"
+            value={searchTerm}
+            onChange={handleSearch}
+          />
+        </Form.Group>
       </div>
       <Container fluid>
         <Row>
           {filteredProducts.map((product) => (
-            <Col xs={14} sm={6} lg={3} style={{ margin: "10px" }}>
+            <Col xs={12} sm={6} lg={3} className="mb-4">
               <Product key={product.id} product={product} />
             </Col>
           ))}

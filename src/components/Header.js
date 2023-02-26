@@ -1,28 +1,36 @@
-
-import { Button, Nav } from "react-bootstrap";
+import { faShoppingBag, faShoppingCart, faPlus, faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Button, Nav, NavLink } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import "./Header.css"; // import your custom CSS file
 
 function Header({ logout }) {
   return (
     <Nav className="bg-dark justify-content-between">
       <Nav.Item>
-        <Button as={Link} to="/" variant="link">
-          Products
-        </Button>
+        <NavLink as={Link} to="/" exact activeClassName="active">
+          <Button variant="link" className="nav-button">
+            <FontAwesomeIcon icon={faShoppingBag} /> Browse Products
+          </Button>
+        </NavLink>
       </Nav.Item>
       <Nav.Item>
-        <Button as={Link} to="/cart" variant="link">
-          Cart
-        </Button>
+        <NavLink as={Link} to="/cart" activeClassName="active">
+          <Button variant="link" className="nav-button">
+            <FontAwesomeIcon icon={faShoppingCart} /> Cart
+          </Button>
+        </NavLink>
       </Nav.Item>
       <Nav.Item>
-        <Button as={Link} to="/addproduct" variant="link">
-          Add Product
-        </Button>
+        <NavLink as={Link} to="/addproduct" activeClassName="active">
+          <Button variant="link" className="nav-button">
+            <FontAwesomeIcon icon={faPlus} /> Add Product
+          </Button>
+        </NavLink>
       </Nav.Item>
       <Nav.Item>
-        <Button onClick={logout} variant="link">
-          Logout
+        <Button onClick={logout} variant="link" className="nav-button">
+          <FontAwesomeIcon icon={faSignOutAlt} /> Logout
         </Button>
       </Nav.Item>
     </Nav>

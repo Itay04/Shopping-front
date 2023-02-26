@@ -1,0 +1,15 @@
+.nav-button {
+  color: white;
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+.nav-button:hover {
+  color: #17a2b8;
+  text-decoration: none;
+}
+
+.active .nav-button {
+  color: #17a2b8;
+  text-decoration: none;
+}

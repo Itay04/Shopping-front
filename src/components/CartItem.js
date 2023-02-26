@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useState } from "react";
 import { Button, Card } from "react-bootstrap";
+import "./CartItem.css";
+
 function CartItem({ cartitem, updateCart }) {
   const [quantity, setQuantity] = useState(cartitem.quantity);
 
@@ -43,10 +45,10 @@ function CartItem({ cartitem, updateCart }) {
       <Card>
         <Card.Img variant="top" src={"http://localhost:8000/static" + cartitem.product.image} alt={cartitem.product.name} />
         <Card.Body>
-          <Card.Title>{cartitem.product.name}</Card.Title>
-          <Card.Text>{cartitem.product.description}</Card.Text>
-          <Card.Text>${cartitem.product.price}</Card.Text>
-          <Card.Text>{cartitem.product.quantity}</Card.Text>
+          <Card.Title className="cart-item-title">{cartitem.product.name}</Card.Title>
+          <Card.Text className="cart-item-description">{cartitem.product.description}</Card.Text>
+          <Card.Text className="cart-item-price">${cartitem.product.price}</Card.Text>
+          <Card.Text className="cart-item-quantity">{cartitem.product.quantity}</Card.Text>
           <input
             type="number"
             value={quantity}
